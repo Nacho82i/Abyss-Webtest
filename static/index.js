@@ -51,7 +51,7 @@ var chosenAdState = localStorage.getItem("adState") || "adchangeon";
 if (chosenAdState === "adchangeon") {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = '//pl22667078.profitablegatecpm.com/ed/d6/27/edd627939d21229c8335c92b2a743aa7.js';
+  script.src = '//pl22667078.highcpmgate.com/ed/d6/27/edd627939d21229c8335c92b2a743aa7.js';
   document.head.appendChild(script);
 } 
 
@@ -463,6 +463,9 @@ let splashtext = [
   "check out the games page",
   "check out the settings to hide from your teacher",
   "need ChatGPT? search for it on the games page!",
+  "shoutout owen, ramsey, and levi",
+  "co owned by wyatt batdorf",
+  "enzo is interesting...",
 ]
 
 const runService = async (url, override, overrideadrbar) => {
@@ -700,6 +703,14 @@ const ts = new TabSystem({
 const createNewTab = () => {
   ts.setActiveTab(ts.addTab(new Tab()));
   ts.activeTab.getTabElement().querySelector("#quote").innerText = splashtext[Math.floor(Math.random() * splashtext.length)];
+  ts.activeTab.getTabElement().querySelector('#adrbar2').addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (ts.activeTab.getTabElement().querySelector('#adrbar2').value === "") return;
+      runService(ts.activeTab.getTabElement().querySelector('#adrbar2').value);
+      ts.activeTab.getTabElement().querySelector('#adrbar2').value;
+    }
+  });
 };
 
 createNewTab();
@@ -713,14 +724,7 @@ document.getElementById("adrbar").addEventListener("keydown", function (e) {
   }
 });
 
-document.getElementById("adrbar2").addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    if (document.getElementById("adrbar2").value === "") return;
-    runService(document.getElementById("adrbar2").value);
-    document.getElementById("adrbar2").value;
-  }
-});
+
 
 let tb = document.getElementById("tabsBar");
 if (tb) {
