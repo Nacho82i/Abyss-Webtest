@@ -13,6 +13,8 @@
 ## Features
 
 - About:Blank Cloaking
+- https://play.geforcenow.com
+- https://pc.shadow.tech/login
 - Tab Cloaking
 - Wide collection of apps & games
 - Clean, Easy to use UI
